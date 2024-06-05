@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Item> container = new ArrayList<>();
+        Item I1 = new Item(12345,"pencil");
+        Item I2 = new Item(28745,"rubber");
+        Item I3 = new Item(98512,"ruler");
+        Item I4 = new Item(21436,"notebook");
+        Item I5 = new Item(29756,"book");
+        container.add(I1);
+        container.add(I2);
+        container.add(I3);
+        container.add(I4);
+        container.add(I5);
+        for (int i = 0; i < container.size(); i++) {
+            System.out.println(container.get(i));
+        }
+        for(Item j : container){
+            j.show();
+        }
+
+       Map<Integer, String> containerHM = new HashMap<>();
+        for(Item i : container){
+            containerHM.put(i.getID(), i.getName());
+        }
+
+        Set<Integer> keySet = containerHM.keySet();
+        Collection<String> values = containerHM.values();
+        for (Map.Entry<Integer,String> entry : containerHM.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+
+
+    }
+}
